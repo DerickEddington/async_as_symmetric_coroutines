@@ -1,0 +1,85 @@
+[package]
+name = "async_as_symmetric_coroutines"
+description = "Helpers to use `async` code as symmetric coroutines in stable Rust."
+version = "0.0.1"
+authors = ["Derick Eddington"]
+repository = "https://github.com/DerickEddington/async_as_symmetric_coroutines"
+readme = "README.md"
+keywords = ["coroutine", "generator", "fiber", "async", "futures"]
+categories = ["concurrency", "asynchronous", "rust-patterns", "data-structures"]
+edition = "2021"
+rust-version = "1.56"
+license = "Unlicense"
+
+[dependencies]
+flume = { version = "0.11.0", default-features = false, features = ["async"] }
+
+[dev-dependencies]
+pollster = "0.3.0"
+futures-util = "0.3.30"
+
+[lints.rust]
+unsafe_code =                     "forbid"
+unstable_features =               "forbid"
+# Warn about desired lints that would otherwise be allowed by default.
+# Groups
+future_incompatible =             { level = "warn", priority = -1 }
+nonstandard_style =               { level = "warn", priority = -1 }
+rust_2018_compatibility =         { level = "warn", priority = -1 }
+rust_2018_idioms =                { level = "warn", priority = -1 }
+rust_2021_compatibility =         { level = "warn", priority = -1 }
+unused =                          { level = "warn", priority = -1 }
+# Individual lints not included in above groups and desired.
+let_underscore_drop =             "warn"
+macro_use_extern_crate =          "warn"
+meta_variable_misuse =            "warn"
+missing_copy_implementations =    "warn"
+missing_debug_implementations =   "warn"
+missing_docs =                    "warn"
+#missing_doc_code_examples =      "warn"  # maybe someday
+redundant_lifetimes =             "warn"
+single_use_lifetimes =            "warn"
+trivial_casts =                   "warn"
+trivial_numeric_casts =           "warn"
+unit_bindings =                   "warn"
+unnameable_types =                "warn"
+unreachable_pub =                 "warn"
+unused_crate_dependencies =       "warn"
+unused_extern_crates =            "warn"
+unused_import_braces =            "warn"
+unused_lifetimes =                "warn"
+unused_macro_rules =              "warn"
+unused_qualifications =           "warn"
+unused_results =                  "warn"
+variant_size_differences =        "warn"
+
+[lints.clippy]
+# Groups
+pedantic =                         { level = "warn", priority = -1 }
+restriction =                      { level = "warn", priority = -1 }
+cargo =                            { level = "warn", priority = -1 }
+# Exclude (re-allow) undesired lints included in above groups.
+absolute_paths =                   "allow"
+blanket_clippy_restriction_lints = "allow"
+default_numeric_fallback =         "allow"
+disallowed_script_idents =         "allow"
+impl_trait_in_params =             "allow"
+implicit_return =                  "allow"
+min_ident_chars =                  "allow"
+missing_docs_in_private_items =    "allow"
+missing_trait_methods =            "allow"
+module_name_repetitions =          "allow"
+non_ascii_literal =                "allow"
+pattern_type_mismatch =            "allow"
+pub_use =                          "allow"
+pub_with_shorthand =               "allow"
+question_mark_used =               "allow"
+self_named_module_files =          "allow"
+semicolon_outside_block =          "allow"
+separated_literal_suffix =         "allow"
+single_call_fn =                   "allow"
+single_char_lifetime_names =       "allow"
+shadow_reuse =                     "allow"
+
+[lints.rustdoc]
+private_doc_tests =               "warn"
